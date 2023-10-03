@@ -9,6 +9,6 @@ public:
     std::string nombre;
     std::string categoria;
     std::string duenhoActual;
-    bool disponible;
+    bool disponible = duenhoActual.empty();
 };
 #endif //PELGRUPAL_LIBRO_H
