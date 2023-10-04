@@ -3,7 +3,7 @@
 #include "usuario.h"
 #include "libro.h"
 
-void registroInicial(Pila<libro> listaLibros){
+Pila<libro> registroInicial(Pila<libro> listaLibros){
     libro libro;
     std::string vacio;
     libro.duenhoActual = vacio;
@@ -86,9 +86,10 @@ void registroInicial(Pila<libro> listaLibros){
     libro.categoria =  "Autoayuda";
     libro.nombre =  "Descubriendo la Felicidad Interior";
     listaLibros.insert(libro);
+    return listaLibros;
 }
 void librosDisponibles(Pila<libro> listaLibros){
-   
+
     for(int i = 0; i < listaLibros.elementos;i++)
     {
 
@@ -103,7 +104,7 @@ void librosDisponibles(Pila<libro> listaLibros){
 
 int main() {
     Pila<libro> listaLibros;
-    registroInicial(listaLibros);
+    listaLibros = registroInicial(listaLibros);
     librosDisponibles(listaLibros);
     return 0;
 }
